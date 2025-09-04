@@ -29,6 +29,11 @@ public class MonthArchiveController {
     	System.out.println(service.getAllRecords());
         return service.getAllRecords();
     }
+    @GetMapping("/montharchiveprojectwise")
+    public List<MonthArchive> getAllRecordsprojectwise() {
+    	System.out.println(service.getAllprojectRecords());
+        return service.getAllprojectRecords();
+    }
     @GetMapping("/summary")
     public TransactionSummary getSummary() {
         return transactionService.getSummary();

@@ -34,6 +34,23 @@ public class MonthArchiveService {
             }
         );
     }
+    
+    public List<MonthArchive> getAllprojectRecords() {
+        return jdbcTemplate.query(
+            "SELECT ma.lk,ma.sa,ma.date,dv.project,ma.pused,ma.ret,ma.transcation FROM month_arcrive  ma left join projectdb.documents_validity  dv on ma.lk=dv.lk;",
+            (rs, rowNum) -> {
+                MonthArchive m = new MonthArchive();
+                m.setLk(rs.getString("lk"));
+                m.setDate(rs.getDate("date").toLocalDate());
+                m.setSanull(rs.getString("sa"));
+                m.setSa(rs.getString("project"));
+                m.setPused(rs.getString("pused"));
+                m.setRet(rs.getString("ret"));
+                m.setTranscation(rs.getDouble("transcation"));
+                return m;
+            }
+        );
+    }
 
     
 }

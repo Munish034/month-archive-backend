@@ -10,11 +10,18 @@ public class MonthArchive {
 
     private LocalDate date;
     private String sa;
+    private String sanull;
     private String pused;
     private String ret;
     private Double transcation;
     
  
+	public String getSanull() {
+		return sanull;
+	}
+	public void setSanull(String sanull) {
+		this.sanull = sanull;
+	}
 	public LocalDate getDate() {
 		return date;
 	}
