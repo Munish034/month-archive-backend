@@ -1,5 +1,5 @@
 package aadhaar.Model;
-import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 
